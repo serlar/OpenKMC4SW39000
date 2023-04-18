@@ -1,0 +1,35 @@
+# SPPARKS Potts tests on generic lattice
+
+seed		 2001
+app_style	 vacancy
+processors       6 6 10
+
+dimension	 3
+lattice		 bcc 2.855
+region		 box block 0 2400 0 1200 0 2000
+create_box	 box
+create_sites	 box value site 1
+set              i1 value 0 fraction 0.0004 local if i1 = 1
+#set              i1 value 0 fraction 0.000008
+set              i1 value 2 fraction 0.0134 local if i1 = 1
+set              i1 value 3 fraction 0.0051 local if i1 = 1
+set              i1 value 4 fraction 0.0193 local if i1 = 1
+barrier  Fe 0.65
+barrier  Cu 0.56
+barrier  Si 0.44
+barrier  Mn 1.03
+
+nbody  ppair2 FeCuSiMn_2008.dat
+
+temperature	 573.0
+
+solve_style      tree
+sector           yes tstop 1E-8
+#sector            no
+
+stats            4E-7
+diag_style       energy stats yes
+
+#dump             1 text 0.046 dump.Cu_all id site x y z
+
+run             4E-7

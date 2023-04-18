@@ -1,0 +1,99 @@
+SPPARKS (8 Jul 2015)
+==Sun Mar 27 02:10:17 2022
+seed		 2001
+==Sun Mar 27 02:10:17 2022
+app_style	 vacancy
+==Sun Mar 27 02:10:17 2022
+processors       16 18 20
+==Sun Mar 27 02:10:17 2022
+dimension	 3
+==Sun Mar 27 02:10:17 2022
+lattice		 bcc 2.855
+==Sun Mar 27 02:10:17 2022
+region		 box block 0 6400 0 3600 0 4000
+==Sun Mar 27 02:10:17 2022
+create_box	 box
+Created box = (0 0 0) to (18272 10278 11420)
+  16 by 18 by 20 processor grid
+==Sun Mar 27 02:10:17 2022
+create_sites	 box value site 1
+Creating sites ...
+Begining structured_lattice ...Sun Mar 27 02:10:17 2022
+ structured_lattice: before 4-level-loop(mijk)
+Sun Mar 27 02:10:17 2022
+ structured_lattice: before add_ghost
+Sun Mar 27 02:11:17 2022
+ structured_lattice: before MPI_Allreduce
+Sun Mar 27 02:11:23 2022
+  184320000000 sites
+Begining transport ...Sun Mar 27 02:11:23 2022
+End transport ...Sun Mar 27 02:11:23 2022
+==Sun Mar 27 02:11:23 2022
+set              i1 value 0 fraction 0.0004 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 32000000 max 184320000000
+  73728000 settings made for i1: 448.209
+==Sun Mar 27 02:11:23 2022
+set              i1 value 2 fraction 0.0134 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 32000000 max 184320000000
+  2469888000 settings made for i1: 1577.395
+==Sun Mar 27 02:11:25 2022
+set              i1 value 3 fraction 0.0051 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 32000000 max 184320000000
+  940032000 settings made for i1: 828.695
+==Sun Mar 27 02:11:26 2022
+set              i1 value 4 fraction 0.0193 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 32000000 max 184320000000
+  3557376000 settings made for i1: 2246.866
+==Sun Mar 27 02:11:29 2022
+barrier  Fe 0.65
+==Sun Mar 27 02:11:29 2022
+barrier  Cu 0.56
+==Sun Mar 27 02:11:29 2022
+barrier  Si 0.44
+==Sun Mar 27 02:11:29 2022
+barrier  Mn 1.03
+==Sun Mar 27 02:11:29 2022
+nbody  ppair2 FeCuSiMn_2008.dat
+==Sun Mar 27 02:11:29 2022
+temperature	 573.0
+==Sun Mar 27 02:11:29 2022
+solve_style      tree
+==Sun Mar 27 02:11:29 2022
+sector           yes tstop 1E-8
+==Sun Mar 27 02:11:29 2022
+stats            8E-8
+==Sun Mar 27 02:11:29 2022
+diag_style       energy stats yes
+==Sun Mar 27 02:11:29 2022
+run             4E-7
+AppLattice: begin comm->init...Sun Mar 27 02:11:53 2022
+AppLattice: after comm->init...Sun Mar 27 02:12:12 2022
+Setting up run ...
+AppLattice::setup app...Sun Mar 27 02:12:12 2022
+AppLattice::after setup app...Sun Mar 27 02:12:57 2022
+      Time    Naccept    Nreject    Nsweeps        CPU      Energy	Cu_alone
+         0          0          0          0          0 -781346775620.234619	    0
+after setup
+Sun Mar 27 02:13:09 2022
+     1e-08  104733375          0          1       17.7 -781348473439.142212	    1805361462
+     9e-08 1089677114          0          9       53.2 -781352009845.068115	    1797976025
+   1.6e-07 2020289252          0         16       87.4 -781353649936.131714	    1794480934
+   2.4e-07 3103359400          0         24        125 -781355146610.122559	    1791064293
+   3.2e-07 4189757890          0         32        162 -781356440328.579102	    1787937468
+     4e-07 5272326316          0         40        199 -781357609090.200317	    1785000238
+Loop time of 198.93 on 5760 procs
+
+Solve time (%) = 0.718781 (0.361324)
+Border time (%) = 0.000442354 (0.000222367)
+Propensity time (%) = 4.81337 (2.41963)
+Update time (%) = 0.118422 (0.0595297)
+Wait  time (%) = 0.000312988 (0.000157336)
+Barrier  time (%) = 7.58835e-06 (3.81459e-06)
+Comm  time (%) = 17.6287 (8.86178)
+Outpt time (%) = 93.7886 (47.1466)
+App   time (%) = 81.7872 (41.1136)
+Other time (%) = 0.911370 (0.458136)

@@ -1,0 +1,80 @@
+SPPARKS (8 Jul 2015)
+==Thu Mar  3 20:16:26 2022
+seed		 2001
+==Thu Mar  3 20:16:26 2022
+app_style	 vacancy
+==Thu Mar  3 20:16:26 2022
+processors       8 8 16 
+==Thu Mar  3 20:16:26 2022
+dimension	 3
+==Thu Mar  3 20:16:26 2022
+lattice		 bcc 2.855
+==Thu Mar  3 20:16:26 2022
+region		 box block 0 1600 0 1600 0 3200
+==Thu Mar  3 20:16:26 2022
+create_box	 box
+Created box = (0 0 0) to (4568 4568 9136)
+  8 by 8 by 16 processor grid
+==Thu Mar  3 20:16:26 2022
+create_sites	 box value site 1
+Creating sites ...
+Begining structured_lattice ...Thu Mar  3 20:16:26 2022
+ structured_lattice: before 4-level-loop(mijk)
+Thu Mar  3 20:16:26 2022
+ structured_lattice: before add_ghost
+Thu Mar  3 20:16:43 2022
+ structured_lattice: before MPI_Allreduce
+Thu Mar  3 20:16:44 2022
+  16384000000 sites
+Begining transport ...Thu Mar  3 20:16:44 2022
+End transport ...Thu Mar  3 20:16:44 2022
+==Thu Mar  3 20:16:44 2022
+set              i1 value 0 fraction 0.0128 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 16000000 max 16384000000
+  209715200 settings made for i1: 689.102
+==Thu Mar  3 20:16:45 2022
+set              i1 value 2 fraction 0.015 local if i1 = 1
+Setting site values ...
+set: begin set site value nlocal 16000000 max 16384000000
+  245760000 settings made for i1: 841.564
+==Thu Mar  3 20:16:46 2022
+barrier  Fe 0.65
+==Thu Mar  3 20:16:46 2022
+barrier  Cu 0.56
+==Thu Mar  3 20:16:46 2022
+nbody  ppair2 Vincent_2008.dat
+==Thu Mar  3 20:16:46 2022
+temperature	 573.0
+==Thu Mar  3 20:16:46 2022
+solve_style      tree
+==Thu Mar  3 20:16:46 2022
+sector           yes nstop 12
+==Thu Mar  3 20:16:46 2022
+stats            1E-10
+==Thu Mar  3 20:16:46 2022
+diag_style       energy stats yes
+==Thu Mar  3 20:16:46 2022
+run             5E-9
+AppLattice: begin comm->init...Thu Mar  3 20:16:58 2022
+AppLattice: after comm->init...Thu Mar  3 20:17:08 2022
+Setting up run ...
+AppLattice::setup app...Thu Mar  3 20:17:09 2022
+AppLattice::after setup app...Thu Mar  3 20:17:31 2022
+      Time    Naccept    Nreject    Nsweeps        CPU      Energy	Cu_alone
+         0          0          0          0          0 -68451291716.185738	    680956829
+after setup
+Thu Mar  3 20:17:40 2022
+     5e-09  126728677          0          1       65.3 -68464684636.335449	    191207496
+Loop time of 65.3019 on 1024 procs
+
+Solve time (%) = 0.124187 (0.190174)
+Border time (%) = 0.000170816 (0.000261579)
+Propensity time (%) = 0.0874419 (0.133904)
+Update time (%) = 0.0393107 (0.0601983)
+Wait  time (%) = 2.176e-05 (3.33221e-05)
+Barrier  time (%) = 2.27599 (3.48534)
+Comm  time (%) = 2.72889 (4.17888)
+Outpt time (%) = 7.86625 (12.046)
+App   time (%) = 52.1719 (79.8934)
+Other time (%) = 2.37134 (3.63135)
